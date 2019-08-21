@@ -1,0 +1,46 @@
+<h1>Where to Start my Dog Walking Business?</h1>
+
+<h2>1. Introduction</h2>
+
+Problem: A client wants to start a dog walking business in Seattle and has asked for advice about where it should be located.
+
+Ideally we want to target an area with a large number of pets, as well as places to walk them.  
+To do this analysis, we will use the following information:
+- the number of pets in each neighborhood in Toronto
+- the neighborhood name 
+- the population of each each neighborhood from the 2016 census
+- the foursquare api to retrieve the number of appropriate venues for walking dogs (trails, parks and dog runs)
+
+Using the above information, we will
+- cluster neighborhoods to find areas with a relatively high number of pet licenses and high number of dog related venues
+- compare pet licenses from 2013 to 2017 to get an idea of which FSAs are showing a growth in pets
+- look at the proportion of pets/population in each neighborhood
+
+<h2>2. Data Sources</h2>
+
+Data used in this project
+---------------------------------
+Population by FSA from Census 2016: https://www12.statcan.gc.ca/census-recensement/2016/dp-pd/hlt-fst/pd-pl/comprehensive.cfm
+ - this information will be used to calculate the proportion of pet ownership 
+ - this data set has 3 columns of interest: FSA / Province / Population, 2016
+ - We will filter this data set to only include the FSAs located in Toronto
+ 
+Toronto Open Data: Licensed Dogs and Cats Reports for 2013 through 2017 https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/community-services/#a666d03a-bafe-943a-e256-3c2d14b07b10
+- this data has four columns: FSA / # Cat Licenses Issued / # Dog Licenses Issued / Total Licenses
+
+FourSquare Api: 
+* to get number of places to walk a dog per neighborhood
+* specifically, this query will be filtered to look for only the following categoryIds:
+Dog Run 4bf58dd8d48988d1e5941735
+Park 4bf58dd8d48988d163941735
+Trail 4bf58dd8d48988d159941735
+
+* a sample query looks like this:
+https://api.foursquare.com/v2/venues/explore?client_id=<id>&client_secret=<secret>E&v=X&ll=43.642960,-79.371613
+&radius=400&limit=100&categoryId=4bf58dd8d48988d1e5941735,4bf58dd8d48988d163941735,4bf58dd8d48988d159941735
+
+geopy: 
+* to get lat/long coordinates for each FSA, which is used when calling Foursquare API for each FSA
+
+Wikipedia: https://en.wikipedia.org/wiki/List_of_postal_codes_of_Canada:_M
+* to get neighborhood names for each FSA 
