@@ -29,18 +29,18 @@ Toronto Open Data: Licensed Dogs and Cats Reports for 2013 through 2017 https://
 - this data has four columns: FSA / # Cat Licenses Issued / # Dog Licenses Issued / Total Licenses
 
 FourSquare Api: 
-* to get number of places to walk a dog per neighborhood
-* specifically, this query will be filtered to look for only the following categoryIds:
+- to get number of places to walk a dog per neighborhood
+- specifically, this query will be filtered to look for only the following categoryIds:
 Dog Run 4bf58dd8d48988d1e5941735
 Park 4bf58dd8d48988d163941735
 Trail 4bf58dd8d48988d159941735
 
-* a sample query looks like this:
+- a sample query looks like this:
 https://api.foursquare.com/v2/venues/explore?client_id=<id>&client_secret=<secret>E&v=X&ll=43.642960,-79.371613
 &radius=400&limit=100&categoryId=4bf58dd8d48988d1e5941735,4bf58dd8d48988d163941735,4bf58dd8d48988d159941735
 
 geopy: 
-* to get lat/long coordinates for each FSA, which is used when calling Foursquare API for each FSA
+- to get lat/long coordinates for each FSA, which is used when calling Foursquare API for each FSA
 
 Wikipedia: https://en.wikipedia.org/wiki/List_of_postal_codes_of_Canada:_M
-* to get neighborhood names for each FSA 
+- to get neighborhood names for each FSA 
