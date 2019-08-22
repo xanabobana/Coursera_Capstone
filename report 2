@@ -1,12 +1,9 @@
-<h2>3. Methodology</h2>
+3. Methodology
 
-Overview of clean up, EDA and machine learning processes used:
-
-Data Clean up:
---------------
-* check Datatypes and convert any fields that are string to float (i.e. the Dog and Total counts from the Toronto pet licensing data set were imported as object/string but need to be converted to float)
-* check for and drop null/na rows
-* dropped all the extraneous columns from the Population / Census data set except for the FSA and Population in 2016
+Data Preparation
+- check Datatypes and convert any fields that are string to float (i.e. the Dog and Total counts from the Toronto pet licensing data set were imported as object/string but need to be converted to float)
+- check for and drop null/na rows
+- dropped all the extraneous columns from the Population / Census data set except for the FSA and Population in 2016
 
 Retrieval of Neighbourhood names
 ---------------------------------
